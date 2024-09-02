@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.krms4u.api.domain.product.mapper.ProductMapper">
+
+	<resultMap id="productListBest5RM"
+		type="com.krms4u.api.domain.product.dto.resultMap.ProductListBest5RM">
+		<constructor>
+			<arg column="product_id" javaType="java.lang.Long" />
+			<arg column="folderpath" javaType="java.lang.String" />
+			<arg column="filename" javaType="java.lang.String" />
+			<arg column="order_fee" javaType="java.lang.Integer" />
+		</constructor>
+	</resultMap>
+	<select id="selectProductBest5" resultMap="productListBest5RM">
+		select
+		p.product_id as
+		product_id,
+		folderpath,
+		filename,
+		order_fee
+		from product p
+		join image i on
+		p.product_id = i.product_id
+	</select>
+
+</mapper>
