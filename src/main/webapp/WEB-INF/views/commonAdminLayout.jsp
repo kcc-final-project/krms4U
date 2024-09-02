@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>정숙케어</title>
     <!-- Bootstrap5 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -20,8 +20,21 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+   	<!-- Jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Bootstrap5 Script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <!-- Common-layout CSS-->
-    <link rel="stylesheet" href="/resources/css/common/common-admin-layout.css" />
+    <link rel="stylesheet" href="/resources/css/common/commonAdminLayout.css" />
   </head>
   <body>
     <div class="common-header">
@@ -32,7 +45,6 @@
         <span>로그아웃</span>
       </div>
     </div>
-
     <div class="common-sidebar">
       <div class="sidebar-wrap">
         <div class="sidebar-wrap__1">
@@ -69,18 +81,5 @@
         </div>
       </div>
     </div>
-
-    <div class="common-main">
-      <div class="main">
-        <!-- 여기서 개발하세요. -->
-      </div>
-    </div>
-
-    <!-- Bootstrap5 Script -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>

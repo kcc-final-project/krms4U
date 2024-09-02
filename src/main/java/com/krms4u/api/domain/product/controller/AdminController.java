@@ -22,9 +22,7 @@ public class AdminController {
 	
 	@GetMapping
 	public String adminTemplete() {
-		
-
-		return "adminTemplete";
+		return "adminMain";
 	}
 
 }
