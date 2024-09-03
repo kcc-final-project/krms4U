@@ -26,6 +26,7 @@ public class SecurityConfig {
             "/joinForm",        // 회원가입 페이지
             "/join",            // 회원가입 페이지
             "/loginForm",       // 로그인 페이지
+            "/products/**",
             "/h2-console/**",   // H2 데이터베이스 콘솔
     };
 
