@@ -1,10 +1,6 @@
 server:
   port: 8081
 
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.krms4u.api.domain.user.vo
----
 spring:
   messages:
     basename: messages
@@ -13,7 +9,11 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
 
---- 
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.krms4u.api.domain.user.vo
+
+---
 spring:
   config:
     activate:
@@ -29,26 +29,18 @@ spring:
   sql:
     init:
       data-locations: classpath:data-h2.sql
-      
+
 ---
 spring:
+  config:
+    activate:
+      on-profile: dev
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@localhost:1521:XE
-    username: krms4u
-    password: 1234
----
-
-#spring:
-#  config:
-#    activate:
-#      on-profile: dev
-#  datasource:
-#    driver-class-name: oracle.jdbc.driver.OracleDriver
-#    url: jdbc:oracle:thin:@//localhost:${ORACLE_PORT}/XE
-#    username: ${ORACLE_USERNAME}
-#    password: ${ORACLE_PASSWORD}
-#  sql:
-#    init:
-#      mode: never
+    url: jdbc:oracle:thin:@localhost:${ORACLE_PORT}:XE
+    username: ${ORACLE_USERNAME}
+    password: ${ORACLE_PASSWORD}
+  sql:
+    init:
+      mode: never
       
