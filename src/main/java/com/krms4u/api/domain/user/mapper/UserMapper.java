@@ -1,15 +1,15 @@
 package com.krms4u.api.domain.user.mapper;
-
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-
 import com.krms4u.api.domain.user.vo.UserVO;
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface UserMapper {
-//	List<UserVO> selectAllUsers();
+    List<UserVO> selectAllUsers();
 
-	UserVO findByUsername(@Param("email") String email);
+    UserVO findByUsername(String username);
 
-	void joinMember(UserVO user);
+    void joinMember(UserVO user);
+
 }

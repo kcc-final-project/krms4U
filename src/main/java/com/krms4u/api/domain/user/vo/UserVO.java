@@ -13,22 +13,23 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserVO {
-    private Long member_id; // 멤버번호
 
-    private String roles; // 권한
+	private Long member_id; // 멤버번호
 
-    private String name; // 이름
+	private String roles; // 권한
 
-    @NotBlank
-    @Email(message = "잘못된 이메일 형식입니다.")
-    private String email; // 이메일 username 쓸 아이
+	private String name; // 이름
 
-    @NotBlank
-    @Pattern(message = "잘못된 비밀번호 형식입니다."
-            , regexp = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&])[A-Za-z[0-9]$@$!%*#?&]{8,15}")
-    private String password; // 비밀번호
+	@NotBlank
+	@Email(message = "잘못된 이메일 형식입니다.")
+	private String email; // 이메일 username 쓸 아이
 
-    private Timestamp created_at;
+	@NotBlank
+	@Pattern(message = "잘못된 비밀번호 형식입니다.", regexp = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&])[A-Za-z[0-9]$@$!%*#?&]{8,15}")
+	private String password; // 비밀번호
 
-    private Timestamp updated_at;
+	private Timestamp created_at;
+
+	private Timestamp updated_at;
+
 }
