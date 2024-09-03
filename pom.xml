@@ -104,6 +104,12 @@
          <artifactId>dotenv</artifactId>
          <version>4.0.0</version>
       </dependency>
+       <!--spring security-->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        
    </dependencies>
    <build>
       <plugins>
