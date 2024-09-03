@@ -1,17 +1,15 @@
 package com.krms4u.api.domain.product.mapper;
 
-import java.util.List;
-
+import com.krms4u.api.domain.product.dto.resultMap.ProductListBest5RM;
+import com.krms4u.api.domain.product.dto.resultMap.ProductWithImageRM;
 import org.apache.ibatis.annotations.Mapper;
 
-import com.krms4u.api.domain.product.dto.resultMap.ProductListBest5RM;
-import com.krms4u.api.domain.product.dto.resultMap.ProductListRM;
-import com.krms4u.api.domain.product.vo.ProductVO;
+import java.util.List;
 
 @Mapper
 public interface ProductMapper {
 	
-	List<ProductListRM> selectProductList(); // 나중에 구현
+	List<ProductWithImageRM> selectProductList(); // 나중에 구현
 	
 	List<ProductListBest5RM> selectProductBest5(); 
 	

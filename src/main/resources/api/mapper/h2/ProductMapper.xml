@@ -2,27 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper
-	namespace="com.krms4u.api.domain.product.mapper.ProductMapper">
+        namespace="com.krms4u.api.domain.product.mapper.ProductMapper">
 
-	<resultMap id="productListBest5RM"
-		type="com.krms4u.api.domain.product.dto.resultMap.ProductListBest5RM">
-		<constructor>
-			<arg column="product_id" javaType="java.lang.Long" />
-			<arg column="folderpath" javaType="java.lang.String" />
-			<arg column="filename" javaType="java.lang.String" />
-			<arg column="order_fee" javaType="java.lang.Integer" />
-		</constructor>
-	</resultMap>
-	<select id="selectProductBest5" resultMap="productListBest5RM">
-		select
-		p.product_id as
-		product_id,
-		folderpath,
-		filename,
-		order_fee
-		from product p
-		join image i on
-		p.product_id = i.product_id
-	</select>
+    <select id="selectProductBest5" resultType="com.krms4u.api.domain.product.dto.resultMap.ProductListBest5RM">
+        <![CDATA[
+        SELECT product_id, model_name, folder_path, file_name, order_fee
+        FROM (SELECT product_id, model_name, folder_path, file_name, order_fee, COUNT(*) as count
+              FROM (
+                  SELECT p.product_id, model_name, folder_path, file_name, order_fee
+                  FROM product p
+                  INNER JOIN image i ON p.product_id = i.product_id
+                  INNER JOIN order_product op ON p.product_id = op.product_id
+                  )
+              GROUP BY product_id, model_name, folder_path, file_name, order_fee
+              ORDER BY count DESC)
+        WHERE ROWNUM <= 5
+        ]]>
+    </select>
+
+    <select id="selectProductList" resultType="com.krms4u.api.domain.product.dto.resultMap.ProductWithImageRM">
+        SELECT p.product_id, model_code, model_name, order_fee, folder_path, file_name
+        FROM product p
+                 INNER JOIN image i
+                            ON p.product_id = i.product_id
+    </select>
 
 </mapper>
