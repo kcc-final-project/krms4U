@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+.main-banner {
+  width: 100%;
+  height: 100%;
+  background-image: url('/resources/img/service/main-banner.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.main-banner__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(95, 95, 95, 0.5);
+  z-index: 1;
+  padding-top: 80px;
+}
+
+.main-banner__content {
+  position: absolute;
+  top: 17%;
+  left: 10%;
+  width: 40%;
+  height: 40%;
+  color: #004b7a;
+  font-style: italic;
+}
+
+.main-banner__content h1 {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.main-banner__content h1 span {
+  color: white;
+}
+
+.main-banner__content > span {
+  font-size: 60px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.main-banner__btn {
+  position: absolute;
+  bottom: 70px;
+  width: 220px;
+  padding: 12px 20px;
+  font-weight: 500;
+  background-color: #0155ff;
+  border-radius: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 애니메이션 정의 */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.banner-title {
+  animation: slideIn 0.7s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.banner-content {
+  animation: slideIn 1.5s ease-out forwards;
+  animation-delay: 1.5s;
+}
