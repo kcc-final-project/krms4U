@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,83 +18,8 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .main {
-            height: 932px;
-        }
-        .body {
-            height: 100%;
-            margin: 0 auto;
-            width: 30%;
-        }
-        .login-head {
-            height: 10%;
-        }
-        .login-main {
-            height: 80%;
-        }
-        .login-mapper {
-            height: 90%;
-        }
-        .login-body {
-            height: 69%;
-        }
-        .login-image-mapper {
-            height: 35%;
-        }
-        .login-image-header {
-            height: 50%;
-        }
-        .login-image {
-            height: 50%;
-            width: 24%;
-            margin: 0 auto;
-        }
-        .material-icons {
-            margin-right: 100px;
-        }
-        .login-title-mapper {
-            height: 20%;
-        }
-        .login-title-mapper p {
-            text-align: center;
-            font-size: 30px;
-            font-weight: 700;
-        }
-        .login-title-mapper form {
-            text-align: center;
-        }
-        .login-title-mapper div {
-            margin-top: 30px;
-        }
+     <link rel="stylesheet" href ="resources/css/join.css">
 
-        .form-control {
-            height: 50px;
-            width: 60%;
-            margin: 0 auto;
-            background-color: #f5f5f5;
-        }
-
-        #btn-primary-login {
-            height: 50px;
-            width: 60%;
-            margin-top: 60px;
-        }
-
-        .line {
-            height: 1%;
-            width: 60%;
-            background-color: #d7c4c4;
-            margin: 0 auto;
-        }
-
-    </style>
 </head>
 <body>
 <div class="main">
@@ -105,37 +31,47 @@
                     <div class="login-image-mapper">
                         <div class="login-image-header"></div>
                         <div class="login-image">
-                            <span class="material-icons"><img src="logo.svg" /></span>
+                            <span class="material-icons"><img src="/resources/img/service/logo.svg" class="logo" alt="" /></span>
                         </div>
                         <div class="login-title"></div>
                     </div>
                     <div class="login-title-mapper">
                         <p>회원가입</p>
                         <div>
-                            <form action="/join" method="post">
+                            <form:form action="/join" method="post" modelAttribute="user" >
+
                                 <div>
-                                    <input
+                                    <form:input
                                             type="text"
                                             class="form-control"
                                             placeholder="이름"
                                             name="name"
+                                            path="name"
                                     />
+                                    <form:errors path="name" cssClass="errorCss"></form:errors>
                                 </div>
+
                                 <div>
-                                    <input
-                                            type="email"
+                                    <form:input
+                                            type="text"
                                             class="form-control"
                                             placeholder="이메일"
                                             name="email"
+                                            path="email"
                                     />
+                                    <form:errors path="email" cssClass="errorCss"></form:errors>
                                 </div>
                                 <div>
-                                    <input
+                                    <form:input
                                             type="password"
                                             class="form-control"
                                             placeholder="비밀번호"
                                             name="password"
+                                            path="password"
                                     />
+                                    <div class="errors-wrap">
+                                    <form:errors path="password" cssClass="errorCss"></form:errors>
+                                    </div>
                                 </div>
                                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
@@ -146,7 +82,7 @@
                                 >
                                     회원가입
                                 </button>
-                            </form>
+                            </form:form>
                         </div>
                         <div class="line"></div>
                     </div>

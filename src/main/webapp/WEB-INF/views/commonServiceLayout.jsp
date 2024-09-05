@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>        
-    
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,6 +37,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    
   </head>		
   <body>
     <div class="common-header">
@@ -50,11 +51,29 @@
           </div>
         </div>
         <div class="header-right">
-          <span>장바구니</span>
-          <span>회원가입</span>
-          <span>로그인</span>
+        <sec:authorize access="isAnonymous()">
+          <span class="goToSignUpPage">회원가입</span>
+          <span class="goToSignInPage">로그인</span>
+        </sec:authorize>
+        <sec:authorize access="isAuthenticated()">
+            <form method="POST" action="/logout">
+    			<input type="hidden" name="_csrf" value="${_csrf.token}"/>
+    			<button type="submit" class="logout-btn">로그아웃</button>
+			</form>
+          </sec:authorize>
         </div>
       </div>
     </div>
+   	<script>
+   		$(function() {
+   			$(".goToSignUpPage").on("click", function() {
+   				window.location.href="/joinForm";
+   			});
+   			
+   			$(".goToSignInPage").on("click", function() {
+   				window.location.href="/loginForm";
+   			});
+   		});
+   	</script>
   </body>		
 </html>

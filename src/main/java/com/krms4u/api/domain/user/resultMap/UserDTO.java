@@ -1,30 +1,26 @@
 package com.krms4u.api.domain.user.resultMap;
 
-//import com.krms4u.api.domain.orders.vo.OrdersVO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 public class UserDTO {
-    private Long memberId; // 멤버번호
+    private Long memberId;
 
-    private String roles; // 권한
+    private String roles;
 
-    private String name; // 이름
+    private String name;
 
-    private String email; // 이메일
+    private String email;
 
-    private String password; // 비밀번호
+    private String password;
 
     private Timestamp createdAt;
 
     private Timestamp updatedAt;
-
-//    private List<OrdersVO> orders;
 
     public UserDTO(Long memberId, String roles, String name, String email, String password, Timestamp createdAt, Timestamp updatedAt) {
         this.memberId = memberId;

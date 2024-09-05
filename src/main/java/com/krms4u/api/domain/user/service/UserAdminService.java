@@ -9,5 +9,7 @@ import java.util.List;
 
 public interface UserAdminService {
 
-    public List<UserVO> selectAllUsers();
+	List<UserVO> selectAllUsers();
+
+   
 }

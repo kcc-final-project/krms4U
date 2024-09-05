@@ -24,7 +24,7 @@ public class AdminUserController {
     @GetMapping("/user")
     public String test(Model model) {
         List<UserVO> userlist = service.selectAllUsers();
-//        System.out.println("userlist = " + userlist);
+
         int size = userlist.size();
         model.addAttribute("users", userlist); 
         model.addAttribute("usersize", size);
