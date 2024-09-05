@@ -31,7 +31,7 @@ public class MyBatisConfig {
 	@Bean
 	@Profile("dev")
 	public SqlSessionFactory devSqlSessionSessionFactory(final DataSource dataSource) throws Exception {
-
+		
 		final SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
 		factory.setDataSource(dataSource); // Oracle
 

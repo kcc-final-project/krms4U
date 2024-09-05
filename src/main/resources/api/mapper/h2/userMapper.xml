@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.krms4u.api.domain.user.mapper.UserMapper">
+	<select id="findByUsername" resultType="com.krms4u.api.domain.user.vo.UserVO">
+		select * from member where email = #{email}
+	</select>
+
+	<select id="findByMypageUserId" resultType="String">
+		select member_id from member where email =#{email}
+	</select>
+
+
+	<insert id="joinMember" parameterType="UserVO">
+		insert into member(member_id,roles,name,email,password,created_at,updated_at)
+		values(next value for seq_member,#{roles},#{name},#{email},#{password}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+	</insert>
+	
+	<select id="applicationDetails" resultType="UserMypageDTO">
+		select c.order_product_id,folder_path,file_name,model_name,name,model_code
+		from MEMBER a
+				 INNER JOIN orders b on a.member_id = b.member_id
+				 INNER JOIN order_product c on b.order_id = c.order_id
+				 INNER JOIN product d on c.product_id = d.product_id
+				 INNER JOIN image e on d.product_id  = e.product_id
+		where a.member_id = #{userId};
+	</select>
+</mapper>
+<!--		select name,c.order_product_id,folder_path,file_name,model_name,recipient_name,model_code-->
+<!--		from MEMBER a-->
+<!--		INNER JOIN orders b on a.member_id = b.member_id-->
+<!--		INNER JOIN order_product c on b.order_id = c.order_id-->
+<!--		INNER JOIN product d on c.product_id = d.product_id-->
+<!--		INNER JOIN image e on d.product_id  = e.product_id-->
+<!--		where a.member_id = 15;-->

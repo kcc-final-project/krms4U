@@ -1,6 +1,5 @@
 package com.krms4u.api.common.exception;
 
-import jakarta.annotation.Generated;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

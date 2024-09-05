@@ -50,11 +50,29 @@
           </div>
         </div>
         <div class="header-right">
-          <span>장바구니</span>
-          <span>회원가입</span>
-          <span>로그인</span>
+        <sec:authorize access="isAnonymous()">
+          <span class="goToSignUpPage">회원가입</span>
+          <span class="goToSignInPage">로그인</span>
+        </sec:authorize>
+        <sec:authorize access="isAuthenticated()">
+            <form method="POST" action="/logout">
+    			<input type="hidden" name="_csrf" value="${_csrf.token}"/>
+    			<button type="submit" class="logout-btn">로그아웃</button>
+			</form>
+          </sec:authorize>
         </div>
       </div>
     </div>
-  </body>		
+   	<script>
+   		$(function() {
+   			$(".goToSignUpPage").on("click", function() {
+   				window.location.href="/joinForm";
+   			});
+
+   			$(".goToSignInPage").on("click", function() {
+   				window.location.href="/loginForm";
+   			});
+   		});
+   	</script>
+  </body>
 </html>

@@ -1,0 +1,134 @@
+.main-product-header {
+    display: flex;
+    padding-top: 10px;
+    padding-left: 20px;
+    height: 3%;
+    background-color: #e2ebfa;
+}
+
+.main-product-header h6 {
+    line-height: 1.5;
+}
+
+.main-product-name {
+    display: flex;
+    height: 10%;
+    align-items: center;
+    background-color: #e2ebfa;
+    padding-left: 10px;
+    align-items: center; /* 세로 중앙 정렬 */
+    width: 100%; /* 너비를 부모 요소에 맞춤 */
+    justify-content: space-between;
+}
+
+.main-product-name h3 {
+    margin-right: 30px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.line {
+    height: 1px;
+    background-color: gray;
+}
+
+.register-main {
+    height: 100%;
+    display: flex;
+}
+
+.register-image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.register-image .btn {
+    width: 400px !important;
+    height: 100px !important;
+    margin-top: 30px;
+    margin-bottom: 180px;
+}
+
+.register-image .logo {
+    width: 50%;
+    height: 50%;
+}
+
+.register-option {
+    margin-top: 30px;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-label {
+    width: 100px;
+}
+
+.mb-3 {
+    width: 80%;
+    display: flex;
+}
+
+.mb-3 .btn {
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    width: 100px !important;
+    height: 50px !important;
+    margin-right: 150px !important;
+}
+
+/* Datepicker input field 스타일 커스터마이징 */
+#datepicker {
+    background-color: #f9f9f9;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Datepicker 캘린더 팝업 스타일 */
+.datepicker {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    cursor: pointer;
+}
+
+.datepicker-switch {
+    text-align: center;
+}
+
+.next {
+    text-align: center;
+}
+
+.prev {
+    text-align: center;
+}
+
+.datepicker .today {
+    background-color: #007bff;
+    color: #fff;
+}
+/* Datepicker 내부 요소 정렬 */
+.datepicker .datepicker-days table {
+    width: 100%; /* 테이블이 팝업 크기에 맞도록 설정 */
+}
+
+.datepicker-switch{
+    align-content: center !important;
+    justify-content: center !important;;
+}
+
+.register-option .mb-3{
+    font-size: small;
+}

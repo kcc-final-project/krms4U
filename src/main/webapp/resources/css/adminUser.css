@@ -1,0 +1,87 @@
+.main-member-header {
+    display: flex;
+    padding-top: 10px;
+    padding-left: 20px;
+    height: 3%;
+    background-color: #e2ebfa;
+}
+
+.main-member-header h6 {
+    line-height: 1.5;
+}
+
+.main-member-name {
+    display: flex;
+    height: 10%;
+    background-color: #e2ebfa;
+    padding-left: 10px;
+    padding-right: 80px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.search .btn {
+    width: 100px !important;
+}
+
+.main-member-name h3 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.line {
+    height: 1px;
+    background-color: gray;
+}
+
+.main-member-list {
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.all-member-counts {
+    font-weight: 900;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 80px;
+    font-size: 15px;
+}
+
+.member-table {
+    width: 90%;
+    margin: auto;
+    width: 90%;
+    height: 100%;
+}
+
+.table-box tbody {
+    display: block;
+    width: 100%;
+    max-height: 610px;
+    overflow-y: auto;
+}
+
+.table-box thead,
+.table-box tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+tbody::-webkit-scrollbar {
+    width: 6px;
+    background-color: #eee;
+}
+
+tbody::-webkit-scrollbar-thumb {
+    background-color: #7c869b;
+    border-radius: 10px;
+}
+
+.main-member-page {
+    height: 10%;
+    background-color: #bd3e3e;
+}
