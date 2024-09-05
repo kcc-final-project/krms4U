@@ -35,7 +35,7 @@
                                 <div class="title-hideen"></div>
                             </div>
                             <button
-                                    class="register-button btn btn-dark btn-sm"
+                                    class="register-button btn btn-dark btn-sm c-button"
                                     id="openModalBtn"
                             >
                                 등록
@@ -78,7 +78,7 @@
                                                     id="zonecode"
                                             />
                                             <button
-                                                    class="el_btn el_btn--outline hp_shrink-0"
+                                                    class="el_btn el_btn--outline hp_shrink-0 c-button"
                                                     id="search-btn"
                                             >
                                                 우편번호 찾기
@@ -97,7 +97,7 @@
                                                 placeholder="상세주소를 입력해주세요."
                                                 id="roadAddressDetail"
                                         />
-                                        <button class="el_btn" id="register-btn">
+                                        <button class="el_btn c-button" id="register-btn">
                                             주소 등록하기
                                         </button>
                                     </div>
@@ -111,7 +111,7 @@
                                         <div class="el_ttl">상세주소</div>
                                         <div class="el_result detail-address"></div>
                                     </div>
-                                    <button class="result-button" id="delivery-btn">등록</button>
+                                    <button class="result-button c-button" id="delivery-btn">등록</button>
                                 </div>
                             </div>
                         </div>
@@ -192,7 +192,7 @@
                                             </div>
                                         </div>
                                         <div class="pay-btn-wrap">
-                                            <button class="btn btn-primary" id="pay-btn">
+                                            <button class="btn btn-primary c-button" id="pay-btn">
                                                 결제하기
                                             </button>
                                         </div>

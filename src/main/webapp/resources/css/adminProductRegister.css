@@ -3,7 +3,6 @@
     padding-top: 10px;
     padding-left: 20px;
     height: 3%;
-    background-color: #e2ebfa;
 }
 
 .main-product-header h6 {
@@ -14,7 +13,6 @@
     display: flex;
     height: 10%;
     align-items: center;
-    background-color: #e2ebfa;
     padding-left: 10px;
     align-items: center; /* 세로 중앙 정렬 */
     width: 100%; /* 너비를 부모 요소에 맞춤 */
@@ -23,8 +21,12 @@
 
 .main-product-name h3 {
     margin-right: 30px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
+}
+
+.icn-size {
+    font-size: 40px;
 }
 
 .line {
@@ -45,6 +47,7 @@
     justify-content: center;
     flex-direction: column;
 }
+
 .register-image .btn {
     width: 400px !important;
     height: 100px !important;
@@ -53,7 +56,7 @@
 }
 
 .register-image .logo {
-    width: 50%;
+    width: 400px;
     height: 50%;
 }
 
@@ -80,7 +83,7 @@
 }
 
 .btn-primary {
-    width: 100px !important;
+    width: 80% !important;
     height: 50px !important;
     margin-right: 150px !important;
 }
@@ -92,6 +95,23 @@
     border-radius: 4px;
     padding: 10px;
     font-size: 16px;
+}
+
+.cxc-btn {
+    margin-top: 65px !important;
+}
+
+.c-ipt {
+    height: 32px;
+    line-height: 18px;
+    font-size: 14px;
+}
+
+.ccc-btn {
+    width: 200px;
+    height: 32px;
+    line-height: 18px;
+    font-weight: 600;
 }
 
 /* Datepicker 캘린더 팝업 스타일 */
@@ -119,16 +139,17 @@
     background-color: #007bff;
     color: #fff;
 }
+
 /* Datepicker 내부 요소 정렬 */
 .datepicker .datepicker-days table {
     width: 100%; /* 테이블이 팝업 크기에 맞도록 설정 */
 }
 
-.datepicker-switch{
+.datepicker-switch {
     align-content: center !important;
     justify-content: center !important;;
 }
 
-.register-option .mb-3{
+.register-option .mb-3 {
     font-size: small;
 }

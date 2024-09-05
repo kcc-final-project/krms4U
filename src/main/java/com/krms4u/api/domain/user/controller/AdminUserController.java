@@ -4,6 +4,7 @@ import com.krms4u.api.domain.user.service.UserAdminService;
 import com.krms4u.api.domain.user.vo.UserVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
@@ -21,6 +22,7 @@ public class AdminUserController {
 	@Autowired
     private UserAdminService service;
 
+    @Secured("ROLE_ADMIN")
     @GetMapping("/user")
     public String test(Model model) {
         List<UserVO> userlist = service.selectAllUsers();

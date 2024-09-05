@@ -3,7 +3,6 @@
     padding-top: 10px;
     padding-left: 20px;
     height: 3%;
-    background-color: #e2ebfa;
 }
 
 .main-member-header h6 {
@@ -13,7 +12,6 @@
 .main-member-name {
     display: flex;
     height: 10%;
-    background-color: #e2ebfa;
     padding-left: 10px;
     padding-right: 80px;
     justify-content: space-between;
@@ -21,12 +19,27 @@
     width: 100%;
 }
 
+.ccc-btn {
+    height: 32px;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hhh-input {
+    height: 32px;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1.5px solid #4c88fd;
+}
+
 .search .btn {
     width: 100px !important;
 }
 
 .main-member-name h3 {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
 }
 
@@ -45,15 +58,20 @@
 .all-member-counts {
     font-weight: 900;
     padding-top: 20px;
-    margin-bottom: 10px;
-    padding-left: 80px;
+    padding-left: 40px;
+    margin-bottom: 20px;
     font-size: 15px;
 }
 
+.cxx-btn{
+    height:30px;
+    line-height: 18px;
+    font-size: 14px;
+}
+
 .member-table {
-    width: 90%;
     margin: auto;
-    width: 90%;
+    width: 95%;
     height: 100%;
 }
 

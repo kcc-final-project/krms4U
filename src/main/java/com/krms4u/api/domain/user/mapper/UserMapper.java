@@ -13,7 +13,7 @@ public interface UserMapper {
 
     void joinMember(UserVO user);
 
-    List<UserMypageDTO> applicationDetails(String userId);
+    List<UserMypageDTO> applicationDetails(Long userId);
 
     String findByMypageUserId(String username);
 }

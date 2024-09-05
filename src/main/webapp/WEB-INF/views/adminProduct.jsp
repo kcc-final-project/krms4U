@@ -16,18 +16,18 @@
 			<h6>> 상품관리</h6>
 		</div>
 		<div class="main-product-name">
-			<div class="product-list-register">
+			<div class="product-list-register d-flex align-items-center">
 				<h3>상품 목록</h3>
 				<button
-						class="btn btn-primary btn-lg d-block w-30"
+						class="btn btn-primary d-block ms-10"
 						onclick="window.location.href='/admin/adminProductRegister';"
 				>
 					상품 등록
 				</button>
 			</div>
 			<div class="search">
-				<form class="d-flex" id="searchForm">
-					<select id="searchFilter" class="form-select me-2">
+				<form class="d-flex align-items-center" id="searchForm">
+					<select id="searchFilter" class="form-select me-2 hhh-input">
 						<option value="3">상품명</option>
 						<option value="2">모델명</option>
 						<option value="7">주요기능</option>
@@ -36,12 +36,12 @@
 						<option value="11">제조사</option>
 					</select>
 					<input
-							class="form-control me-2"
+							class="form-control me-2 hhh-input"
 							type="search"
 							placeholder="검색어를 입력해주세요"
 							aria-label="Search"
 					/>
-					<button class="btn btn-outline-dark" type="submit">검색</button>
+					<button class="btn btn-outline-primary ccc-btn" type="submit">검색</button>
 				</form>
 			</div>
 		</div>
@@ -52,7 +52,7 @@
 			</div>
 		</div>
 		<div class="main-product-list">
-			<div class="product-table shadow-sm">
+			<div class="product-table card shadow-sm">
 				<table
 						class="table table-striped table-hover table-box"
 						id="payroll-table"
@@ -91,16 +91,16 @@
 								/>
 							</td>
 							<td class="number-column">${product.product_id}</td>
-							<td>${product.model_code}</td>
-							<td>${product.model_name}</td>
+							<td class="uni-cnt">${product.model_code}</td>
+							<td class="uni-cnt">${product.model_name}</td>
 							<td class="price-column">${product.order_fee}</td>
-							<td>${product.product_size}</td>
-							<td>${product.product_release}</td>
-							<td>${product.product_funtion}</td>
-							<td>${product.product_weight}</td>
-							<td>${product.product_method}</td>
-							<td>${product.product_install}</td>
-							<td>${product.manufacturer}</td>
+							<td class="uni-cnt">${product.product_size}</td>
+							<td class="uni-cnt">${product.product_release}</td>
+							<td class="uni-cnt">${product.product_funtion}</td>
+							<td class="uni-cnt">${product.product_weight}</td>
+							<td class="uni-cnt">${product.product_method}</td>
+							<td class="uni-cnt">${product.product_install}</td>
+							<td class="uni-cnt">${product.manufacturer}</td>
 						</tr>
 					</c:forEach>
 					</tbody>
