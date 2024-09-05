@@ -57,4 +57,4 @@ function addNewRow() {
   tableBody.appendChild(newRow);
 }
 
-setInterval(addNewRow, 60000);
+setInterval(addNewRow, 30000);

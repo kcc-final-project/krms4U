@@ -51,6 +51,24 @@
   height: 100%;
 }
 
+.small-title {
+  font-weight: 600;
+}
+
+.cfz-15 {
+  font-size: 15px;
+}
+
+.h-title {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.h-subtitle {
+  font-weight: 600;
+  color: darkgray;
+}
+
 /* popup */
 .popup {
   position: fixed;
@@ -62,11 +80,33 @@
   padding: 20px;
 }
 
+.m-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.m-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.m-title-email {
+  color: #2e55f1;
+}
+
+.orderState {
+  color: #2e55f1 !important;
+  font-weight: 600;
+}
+
+.td-fz {
+  font-size: 14px;
+}
+
 /* 스크롤 설정 */
 .scrollable-list {
   height: 450px;
   overflow-y: scroll;
-  border: 1px solid #ccc;
   padding: 10px;
 }
 .scrollable-list ul {

@@ -24,8 +24,8 @@ public class MailController {
         try {
             MailTO mailTO = new MailTO();
             mailTO.setAddress(email);
-            mailTO.setTitle("밤둘레 님이 발송한 이메일입니다.");
-            mailTO.setMessage("안녕하세요. 반가워요!");
+            mailTO.setTitle("[정숙케어] 안녕하세요. 정숙케어입니다.");
+            mailTO.setMessage("안녕하세요:) 정숙케어입니다. 고객님의 정수기 렌탈 계약이 만료되었습니다. 계속해서 서비스를 이용하시려면 렌탈료를 납부해 주시기 바랍니다. 궁금한 점이 있으시면 언제든지 고객센터로 문의해 주세요. 감사합니다:)");
 
             mailService.sendMail(mailTO);
             return ResponseEntity.ok("Email sent successfully to " + email);
