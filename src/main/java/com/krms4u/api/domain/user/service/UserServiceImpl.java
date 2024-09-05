@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
     }
 
 	@Override
-    public List<UserMypageDTO> applicationDetails(String userId) {
+    public List<UserMypageDTO> applicationDetails(Long userId) {
 
         return userMapper.applicationDetails(userId);
     }

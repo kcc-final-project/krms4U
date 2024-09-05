@@ -24,12 +24,12 @@
       <div class="search">
         <form class="d-flex" id="searchForm">
           <input
-                  class="form-control me-2"
+                  class="form-control me-2 hhh-input"
                   type="search"
                   placeholder="고객명을 입력해주세요"
                   aria-label="Search"
           />
-          <button class="btn btn-outline-dark" type="submit">검색</button>
+          <button class="btn btn-outline-primary ccc-btn" type="submit">검색</button>
         </form>
       </div>
     </div>
@@ -66,7 +66,7 @@
               <td>
                 <button
                         type="button"
-                        class="btn btn-primary"
+                        class="btn btn-outline-primary cxx-btn"
                         onclick="sendMail('${user.email}','${user.name}' )"
                 >
                   메일 보내기

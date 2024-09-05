@@ -1,5 +1,6 @@
 package com.krms4u.api.domain.product.controller;
 
+import com.krms4u.api.common.auth.PrincipalDetail;
 import com.krms4u.api.domain.product.dto.request.ProductOrderRequest;
 import com.krms4u.api.domain.product.dto.resultMap.PageDTO;
 import com.krms4u.api.domain.product.dto.resultMap.ProductDetailRM;
@@ -9,6 +10,7 @@ import com.krms4u.api.domain.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -77,8 +79,9 @@ public class ProductController {
      */
     @PostMapping("/order")
     @ResponseBody
-    public ResponseEntity<?> saveProductOrder(@RequestBody final ProductOrderRequest request) {
-        request.updateMemberId(1L);
+    public ResponseEntity<?> saveProductOrder(@AuthenticationPrincipal PrincipalDetail principalDetail,
+                                              @RequestBody final ProductOrderRequest request) {
+        request.updateMemberId(principalDetail.getMemberId());
         productService.saveProductOrder(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

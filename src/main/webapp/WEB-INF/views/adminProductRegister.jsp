@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%> <%@ include file="commonAdminLayout.jsp" %> <%@ taglib
+         pageEncoding="UTF-8" %>
+<%@ include file="commonAdminLayout.jsp" %>
+<%@ taglib
         prefix="c" uri="jakarta.tags.core" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/resources/css/adminProductRegister.css" />
+    <link rel="stylesheet" href="/resources/css/adminProductRegister.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
@@ -98,12 +100,11 @@
                             accept="image/*"
                     />
                     <button
-                            class="btn btn-outline-dark"
+                            class="btn btn-outline-primary cxc-btn"
                             type="button"
                             id="uploadButton"
                     >
-                        사진을 추가해주세요
-                        <div>+</div>
+                        <span class="material-icons icn-size">add</span>
                     </button>
                 </div>
 
@@ -118,7 +119,7 @@
                                 <div class="col-9">
                                     <input
                                             type="text"
-                                            class="form-control"
+                                            class="form-control c-ipt"
                                             id="model_name"
                                             name="model_name"
                                     />
@@ -137,7 +138,7 @@
                                 <div class="col-9">
                                     <input
                                             type="text"
-                                            class="form-control"
+                                            class="form-control c-ipt"
                                             id="model_code"
                                             name="model_code"
                                     />
@@ -157,7 +158,7 @@
                                 <div class="col-9">
                                     <input
                                             type="text"
-                                            class="form-control"
+                                            class="form-control c-ipt"
                                             id="order_fee"
                                             name="order_fee"
                                     />
@@ -174,7 +175,7 @@
                                 <div class="col-9">
                                     <input
                                             type="text"
-                                            class="form-control"
+                                            class="form-control c-ipt"
                                             id="product_size"
                                             name="product_size"
                                     />
@@ -205,7 +206,7 @@
                         >
                         <input
                                 type="text"
-                                class="form-control"
+                                class="form-control c-ipt"
                                 id="datepicker"
                                 name="product_release"
                                 value="2024-09"
@@ -318,7 +319,7 @@
                         <label for="product_weight" class="form-label">무게</label>
                         <input
                                 type="text"
-                                class="form-control"
+                                class="form-control c-ipt"
                                 id="product_weight"
                                 name="product_weight"
                         />
@@ -328,7 +329,7 @@
                     <div class="mb-3">
                         <label for="product_power" class="form-label">소비전력</label>
                         <select
-                                class="form-select"
+                                class="form-select c-ipt"
                                 id="product_power"
                                 name="product_power"
                         >
@@ -342,7 +343,7 @@
                     <div class="mb-3">
                         <label for="manufacturer" class="form-label">제조사</label>
                         <select
-                                class="form-select"
+                                class="form-select c-ipt"
                                 id="manufacturer"
                                 name="manufacturer"
                         >
@@ -356,7 +357,7 @@
                     <div class="mb-3">
                         <label for="product_method" class="form-label">직수방식</label>
                         <select
-                                class="form-select"
+                                class="form-select c-ipt"
                                 id="product_method"
                                 name="product_method"
                         >
@@ -370,7 +371,7 @@
                     <div class="mb-3">
                         <label for="product_install" class="form-label">설치형태</label>
                         <select
-                                class="form-select"
+                                class="form-select c-ipt"
                                 id="product_install"
                                 name="product_install"
                         >
@@ -381,7 +382,7 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">상품 등록</button>
+                    <button type="submit" class="btn btn-primary ccc-btn">상품 등록</button>
                 </div>
             </div>
         </form>

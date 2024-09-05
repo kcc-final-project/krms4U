@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="commonAdminLayout.jsp" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <!DOCTYPE html>
@@ -52,52 +53,6 @@
     </script>
   </head>
   <body>
-    <div class="common-header">
-      <div class="header-left">
-        <img src="/resources/img/service/logo.svg" class="logo" alt="" />
-      </div>
-      <div class="header-right">
-        <span>로그아웃</span>
-      </div>
-    </div>
-
-    <div class="common-sidebar">
-      <div class="sidebar-wrap">
-        <div class="sidebar-wrap__1">
-          <div class="sidebar-item">
-            <div class="sidebar-item__wrap">
-              <span class="material-icons sidebar-item__icon"
-                >supervisor_account</span
-              >
-              <div class="sidebar-item__title">고객관리</div>
-            </div>
-          </div>
-          <div class="sidebar-item">
-            <div class="sidebar-item__wrap">
-              <span class="material-icons sidebar-item__icon"
-                >supervisor_account</span
-              >
-              <div class="sidebar-item__title">상품관리</div>
-            </div>
-          </div>
-          <div class="sidebar-item">
-            <div class="sidebar-item__wrap">
-              <span class="material-icons sidebar-item__icon"
-                >supervisor_account</span
-              >
-              <div class="sidebar-item__title">주문관리</div>
-            </div>
-          </div>
-          <div class="sidebar-item sidebar-item__active">
-            <div class="sidebar-item__wrap">
-              <span class="material-icons sidebar-item__icon">payments</span>
-              <div class="sidebar-item__title">청구관리</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="common-main">
       <div class="main">
         <div class="admin-order-title">
