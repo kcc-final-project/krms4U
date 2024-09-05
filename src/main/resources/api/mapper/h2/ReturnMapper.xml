@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.krms4u.api.domain.returns.mapper.ReturnMapper">
+
+    <resultMap id="returnMap" type="ReturnDTO">
+        <id column="return_id" property="returnId"/>
+        <result column="order_produt_id" property="orderProductId"/>
+        <result column="model_name" property="modelName"/>
+        <result column="collection_date" property="collectionDate"/>
+        <result column="return_status" property="returnStatus"/>
+    </resultMap>
+    <select id="getReturn" resultMap="returnMap">
+        select
+            r.return_id,
+            op.order_product_id,
+            p.model_name,
+            r.collection_date,
+            r.return_status,
+        from return r INNER JOIN order_product op
+            on r.order_product_id = op.order_product_id inner join product p
+            on p.product_id = op.product_id inner join orders o
+            on o.order_id = op.order_id inner join member m
+            on m.member_id = o.member_id
+        where m.member_id = #{memberId}
+    </select>
+
+
+</mapper>
+
+
+
+

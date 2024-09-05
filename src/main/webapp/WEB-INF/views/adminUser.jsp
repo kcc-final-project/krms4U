@@ -5,6 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="_csrf" content="${_csrf.token}"/>
+  <meta name="_csrf_header" content="${_csrf.headerName}"/>
   <link rel="stylesheet" href="/resources/css/adminUser.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -81,6 +83,14 @@
 
 <script>
   $(document).ready(function () {
+    const csrfToken = $("meta[name='_csrf']").attr('content');
+    const csrfHeader = $("meta[name='_csrf_header']").attr('content');
+
+    $.ajaxSetup({
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader(csrfHeader, csrfToken);
+      }
+    });
     $('#searchForm').on('submit', function (e) {
       e.preventDefault();
       var searchValue = $('input[type="search"]').val();

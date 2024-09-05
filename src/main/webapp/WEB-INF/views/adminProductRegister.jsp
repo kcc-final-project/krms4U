@@ -80,6 +80,7 @@
                 id="productForm"
                 enctype="multipart/form-data"
         >
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <div class="register-main">
                 <div class="register-image">
                     <img

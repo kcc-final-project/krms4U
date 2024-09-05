@@ -19,7 +19,7 @@ alter table member add constraint pk_member
 -- member 데이터 추가
 
 insert into member(member_id, password, name, email, roles, created_at, updated_at)
-values(next value for seq_member, 'pw01', '황철원', 'dream1752@naver.com', 'ROLE_USER', current_timestamp, current_timestamp);
+values(next value for seq_member, 'pw01', '황철원', 'hyunmin1711@gmail.com', 'ROLE_USER', current_timestamp, current_timestamp);
 
 
 insert into member(member_id, password, name, email, roles, created_at, updated_at)
@@ -1005,68 +1005,6 @@ values (next value for seq_order_product, 29, 12, '24', '홍명보', '010-9012-4
 insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
 values (next value for seq_order_product, 30, 15, '36', '김병지', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
 
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 30, 7, '24', '최승지', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 29, 7, '24', '노승우', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 27, 7, '24', '박현우', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 22, 7, '24', '이수호', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 16, 7, '24', '김현민', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 15, 7, '24', '김상학', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 11, 7, '24', '최란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 5, 9, '24', '김란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 6, 9, '24', '나란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 4, 9, '24', '다란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 3, 9, '24', '지란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 2, 9, '24', '박란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 17, 11, '24', '박정란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 16, 11, '24', '최정란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 15, 11, '24', '박정란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 14, 11, '24', '김정란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 32, 15, '24', '박정란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 33, 15, '24', '박정란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 39, 15, '24', '박정란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 40, 19, '24', '박정란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
-
-insert into order_product (order_product_id, order_id, product_id, contract_deadline, recipient_name, recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
-values (next value for seq_order_product, 20, 19, '24', '박정란', '010-0123-5678', '78901', '대전광역시 서구 가수원동', '2024-09-28', '주문완료', 20);
 
 -- charge 테이블
 
@@ -1230,3 +1168,18 @@ values(9, 9, TIMESTAMP '2024-01-18 18:00:00');
 insert into checks (engineer_id, order_product_id, check_date)
 values(10, 10, TIMESTAMP '2024-01-19 19:00:00');
 
+create sequence seq_return START WITH 1 INCREMENT BY 1 NOCYCLE;
+
+create table return (
+                        return_id number(10,0) not null,
+                        order_product_id number(10,0) not null,
+                        collection_date timestamp not null,
+                        return_status varchar2(255) not null,
+                        constraint fk_return_order_product_id foreign key(order_product_id) references order_product(order_product_id)
+);
+
+alter table return add constraint pk_return
+    primary key (return_id);
+
+insert into return (return_id, order_product_id, collection_date, return_status)
+values(next value for seq_return, 1, current_timestamp, '구독 해지');
