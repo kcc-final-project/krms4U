@@ -1,0 +1,89 @@
+ @charset "UTF-8";
+ html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            height: 932px;
+        }
+        .body {
+            height: 100%;
+            margin: 0 auto;
+            width: 30%;
+        }
+        .login-head {
+            height: 10%;
+        }
+        .login-main {
+            height: 80%;
+        }
+        .login-mapper {
+            height: 90%;
+        }
+        .login-body {
+            height: 69%;
+        }
+        .login-image-mapper {
+            height: 35%;
+        }
+        .login-image-header {
+            height: 50%;
+        }
+        .login-image {
+            height: 50%;
+            width: 24%;
+            margin: 0 auto;
+        }
+        .material-icons {
+            margin-right: 100px;
+        }
+        .login-title-mapper {
+            height: 20%;
+        }
+        .login-title-mapper p {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        .login-title-mapper form {
+            text-align: center;
+        }
+        .login-title-mapper div {
+            margin-top: 30px;
+        }
+        #exampleInputId {
+            height: 50px;
+            width: 60%;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+        }
+        #exampleInputPassword1 {
+            height: 50px;
+            width: 60%;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+        }
+        #btn-primary-login {
+            height: 50px;
+            width: 60%;
+            margin-top: 60px;
+        }
+
+        .join-member-link-mapper {
+            height: 40%;
+            display: flex;
+            justify-content: center;
+        }
+        .join-member-link {
+            text-decoration-line: none;
+            color: black;
+        }
+        .line {
+            height: 1%;
+            width: 60%;
+            background-color: #d7c4c4;
+            margin: 0 auto;
+        }

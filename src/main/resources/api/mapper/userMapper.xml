@@ -3,8 +3,8 @@
 
 <mapper
 	namespace="com.krms4u.api.domain.user.mapper.UserMapper">
-	<select id="findByUsername" resultType="com.krms4u.api.domain.user.vo.UserVO">
-		select * from member where email = #{email}
+	<select id="findByUserId" resultType="com.krms4u.api.domain.user.vo.UserVO">
+		select member_id from member where email = #{email}
 	</select>
 
 
