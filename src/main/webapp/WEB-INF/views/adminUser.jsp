@@ -49,6 +49,7 @@
             <th scope="col">이메일</th>
             <th scope="col">생성일</th>
             <th scope="col">수정일</th>
+            <th scope="col">메일 보내기</th>
           </tr>
           </thead>
           <tbody>
@@ -60,6 +61,15 @@
               <td>${user.email}</td>
               <td>${user.created_at}</td>
               <td>${user.updated_at}</td>
+              <td>
+                <button
+                        type="button"
+                        class="btn btn-primary"
+                        onclick="sendMail('${user.email}','${user.name}' )"
+                >
+                  메일 보내기
+                </button>
+              </td>
             </tr>
           </c:forEach>
           </tbody>
@@ -70,12 +80,12 @@
 </div>
 
 <script>
-  $(document).ready(function() {
-    $('#searchForm').on('submit', function(e) {
+  $(document).ready(function () {
+    $('#searchForm').on('submit', function (e) {
       e.preventDefault();
       var searchValue = $('input[type="search"]').val();
       var rows = $('#payroll-table tbody tr');
-      rows.each(function() {
+      rows.each(function () {
         // 세번째 열의 값 가져오기
         var name = $(this).find('td:eq(2)').text();
         // 포함되면 true -> 행 표시, 아니면 숨기기
@@ -83,6 +93,21 @@
       });
     });
   });
+
+  function sendMail(email, name) {
+    $.ajax({
+      url: '/send-email',
+      method: 'POST',
+      data: 'email=' + email,
+      success: function (response) {
+        alert(name + '님에게 메일을 전송하였습니다!');
+      },
+      error: function (error) {
+        console.error('Error fetching user data:', error);
+        alert(name + '님에게 메일 전송을 실패하였습니다!');
+      },
+    });
+  }
 </script>
 </body>
 </html>

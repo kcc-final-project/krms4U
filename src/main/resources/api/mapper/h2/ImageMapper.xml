@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+        namespace="com.krms4u.api.domain.image.mapper.ImageMapper">
+
+    <insert id="saveImage" parameterType="ImageRM">
+        insert into image (image_id, product_id, folder_path, file_name)
+        values (next value for seq_image, #{product_id}, #{folder_path}, #{file_name})
+    </insert>
+</mapper>
