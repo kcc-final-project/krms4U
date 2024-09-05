@@ -39,6 +39,8 @@
         <result property="cardNumber" column="card_number"/>
         <result property="rentalFee" column="rental_fee"/>
         <result property="payDate" column="pay_date"/>
+        <result property="remainingCount" column="remaining_count"/>
+        <result property="chargeCount" column="charge_count"/>
         <result property="automaticTransferDate" column="automatic_transfer_date"/>
         <result property="modelCode" column="model_code"/>
         <collection property="charges" resultMap="chargeMap"/>
@@ -75,7 +77,9 @@
         p.bank_name,
         p.card_number,
         p.rental_fee,
-        p.pay_date
+        p.pay_date,
+        c.remaining_count,
+        c.charge_count
         FROM
         order_product op
         INNER JOIN

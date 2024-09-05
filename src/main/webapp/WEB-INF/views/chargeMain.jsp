@@ -169,8 +169,8 @@
                 <td>PRODUCT-<c:out value="${charge.productId}" /></td>
                 <td><c:out value="${charge.modelName}" /></td>
                 <td><c:out value="${charge.modelCode}" /></td>
-                <td><c:out value="${charge.memberId}" />회</td>
-                <td><c:out value="${charge.memberId}" />회</td>
+                <td><c:out value="${charge.chargeCount}" />회</td>
+                <td><c:out value="${charge.remainingCount}" />회</td>
                 <td><c:out value="${charge.chargeDate}" /></td>
                 <td>Bill-0<c:out value="${charge.chargeId}" /></td>
                 <td><c:out value="${charge.bankName}" /></td>

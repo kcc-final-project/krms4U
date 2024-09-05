@@ -1,41 +1,41 @@
 // 검색 용도
 function searchData() {
-  const productGroup = document.getElementById('productGroup').value;
-  const productCode = document.getElementById('productCode').value;
+  const productGroup = document.getElementById("productGroup").value;
+  const productCode = document.getElementById("productCode").value;
 
   const searchResult = {
     data: [
       {
         id: 1,
-        orderDate: '2024-01-01',
-        customerName: '홍길동',
-        deliveryStatus: '배송 중',
-        price: 10000,
-        installationDate: '2024-01-05',
-        recipientZipCode: '12345',
-        recipientAddress: '서울시',
-        recipientName: '홍길동',
-        recipientPhone: '01012345678',
+        orderDate: "2024-09-04",
+        customerName: "홍길동",
+        deliveryStatus: "배송 중",
+        price: "2,170,000원",
+        installationDate: "2024-09-05",
+        recipientZipCode: "우 03077",
+        recipientAddress: "서울 종로구 창경궁로 254",
+        recipientName: "홍길동",
+        recipientPhone: "010-1234-5678",
         rentalItemCount: 1,
         paymentCompleted: true,
-        productGroup: '렌탈',
-        productCode: '제품1',
+        productGroup: "렌탈",
+        productCode: "제품1",
       },
       {
         id: 2,
-        orderDate: '2024-01-01',
-        customerName: '홍길동',
-        deliveryStatus: '배송 중',
-        price: 10000,
-        installationDate: '2024-01-05',
-        recipientZipCode: '12345',
-        recipientAddress: '서울시',
-        recipientName: '홍길동',
-        recipientPhone: '01012345678',
-        rentalItemCount: 1,
+        orderDate: "2024-09-05",
+        customerName: "박길동",
+        deliveryStatus: "배송 완료",
+        price: "1,140,000원",
+        installationDate: "2024-09-06",
+        recipientZipCode: "우 12345",
+        recipientAddress: "서울 종로구 창경궁로 255",
+        recipientName: "박길동",
+        recipientPhone: "010-1234-5678",
+        rentalItemCount: 2,
         paymentCompleted: false,
-        productGroup: '구매',
-        productCode: '제품2',
+        productGroup: "구매",
+        productCode: "제품2",
       },
     ],
   };
@@ -46,17 +46,17 @@ function searchData() {
     );
   });
 
-  const resultDiv = document.getElementById('result');
-  resultDiv.innerHTML = '';
+  const resultDiv = document.getElementById("result");
+  resultDiv.innerHTML = "";
 
   if (filteredData.length > 0) {
-    const table = document.createElement('table');
+    const table = document.createElement("table");
     table.classList.add(
-      'table',
-      'table-striped',
-      'table-bordered',
-      'table-hover',
-      'text-center'
+      "table",
+      "table-striped",
+      "table-bordered",
+      "table-hover",
+      "text-center",
     );
     let tableHTML = `
     <tr>
@@ -91,30 +91,30 @@ function searchData() {
             <td>${item.recipientPhone}</td>
             <td>${item.productGroup}</td>
             <td>${item.rentalItemCount}</td>
-            <td>${item.paymentCompleted ? '완료' : '미완료'}</td>
+            <td>${item.paymentCompleted ? "완료" : "미완료"}</td>
         </tr>
     `;
     });
     table.innerHTML = tableHTML;
     resultDiv.appendChild(table);
   } else {
-    resultDiv.textContent = '검색 결과가 없습니다.';
+    resultDiv.textContent = "검색 결과가 없습니다.";
   }
 }
 
 // 기사 배정
 function engineer(buttonId) {
   document
-    .querySelectorAll('.popup')
-    .forEach((popup) => (popup.style.display = 'none'));
-  document.getElementById('popup' + buttonId).style.display = 'block';
+    .querySelectorAll(".popup")
+    .forEach((popup) => (popup.style.display = "none"));
+  document.getElementById("popup" + buttonId).style.display = "block";
 }
 
 function selectEngineer(engineerName, buttonId) {
   document.getElementById(buttonId).innerText = engineerName;
-  document.getElementById('popup' + buttonId).style.display = 'none';
+  document.getElementById("popup" + buttonId).style.display = "none";
 }
 
 function closePopup(popupId) {
-  document.getElementById(popupId).style.display = 'none';
+  document.getElementById(popupId).style.display = "none";
 }

@@ -6,6 +6,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="_csrf" content="${_csrf.token}"/>
+  <meta name="_csrf_header" content="${_csrf.headerName}"/>
 </head>
 <body>
 <div class="common-main">
@@ -63,7 +65,7 @@
         </thead>
         <tbody>
         <c:forEach var="orderproduct" items="${orderproducts}" varStatus="status">
-          <tr>
+          <tr class="parent">
             <td><c:out value="${orderproduct.memberId}" /></td>
             <td>
               <a href="" class="order-detail" data-member-id="${orderproduct.memberId}" data-email-id="${orderproduct.email}" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -71,13 +73,13 @@
               </a>
             </td>
             <td>
-                OP-<c:out value="${orderproduct.orderId}" />
+              OP-<c:out value="${orderproduct.orderId}" />
             </td>
 
 
             <td>ORDER-${orderproduct.orderProductId}</td>
             <td>PRODUCT-<c:out value="${orderproduct.productId}" /></td>
-            <td><c:out value="${orderproduct.orderState}" /></td>
+            <td class="orderState"><c:out value="${orderproduct.orderState}" /></td>
             <td><c:out value="${orderproduct.wishDate}" /></td>
             <td>우 <c:out value="${orderproduct.postcode}" /></td>
             <td><c:out value="${orderproduct.address}" /></td>
@@ -89,7 +91,7 @@
             <td>매월<c:out value="${orderproduct.automaticTransferDate}" />일</td>
             <td><c:out value="${orderproduct.orderDate}" /></td>
             <td>
-              <button type="button" class="btn btn-primary delivery" data-order_product_id="${orderproduct.orderProductId}">배송 변경</button>
+              <button type="button" class="btn btn-primary delivery1" data-order-product-id="${orderproduct.orderProductId}">배송 변경</button>
             </td>
 
           </tr>
@@ -100,5 +102,6 @@
   </div>
 </div>
 <script src="/resources/js/ordermanage.js"></script>
+<script src="/resources/js/delivery.js"></script>
 </body>
 </html>

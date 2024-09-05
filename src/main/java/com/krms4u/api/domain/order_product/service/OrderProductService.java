@@ -23,6 +23,10 @@ public class OrderProductService {
         return orderProductMapper.findOrderProduct(orderProductId);
     }
 
+    public List<OrderPopDto> getOrderPop(String email) {
+        return orderProductMapper.getOrderPopByEmail(email);
+    }
+
     public OrderProductVO updateOrderProduct(OrderProductVO orderProductVO) {
         orderProductMapper.update(orderProductVO);
 
@@ -33,7 +37,4 @@ public class OrderProductService {
         orderProductMapper.deleteOrderProduct(orderProductId);
     }
 
-    public List<OrderPopDto> getOrderPop(String email) {
-        return orderProductMapper.getOrderPopByEmail(email);
-    }
 }

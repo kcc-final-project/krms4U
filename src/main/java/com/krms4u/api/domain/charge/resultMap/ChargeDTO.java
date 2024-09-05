@@ -33,19 +33,35 @@ public class ChargeDTO {
 	private String cardNumber;
 	private String rentalFee;
 	private String payDate;
+	private Integer remainingCount;
+	private Integer chargeCount;
 
 	private List<ChargeVO> charges;
 	private List<CheckVO> checks;
 
-	public ChargeDTO(Long orderProductId, Long orderId, Long productId, String contractDeadline, String recipientPhoneno, String postcode, String address, String wishDate, String orderDate, Integer automaticTransferDate) {
-		this.orderProductId = orderProductId;
+	public ChargeDTO(String memberId, String email, Long orderId, Long orderProductId, String productId, String modelName, String modelCode, String wishDate, String postcode, String address, String recipientName, String recipientPhoneno, String contractDeadline, Integer automaticTransferDate, String orderDate, String chargeDate, String chargeId, String bankName, String cardNumber, String rentalFee, String payDate, Integer remainingCount, Integer chargeCount) {
+		this.memberId = memberId;
+		this.email = email;
 		this.orderId = orderId;
-		this.contractDeadline = contractDeadline;
-		this.recipientPhoneno = recipientPhoneno;
+		this.orderProductId = orderProductId;
+		this.productId = productId;
+		this.modelName = modelName;
+		this.modelCode = modelCode;
+		this.wishDate = wishDate;
 		this.postcode = postcode;
 		this.address = address;
-		this.wishDate = wishDate;
-		this.orderDate = orderDate;
+		this.recipientName = recipientName;
+		this.recipientPhoneno = recipientPhoneno;
+		this.contractDeadline = contractDeadline;
 		this.automaticTransferDate = automaticTransferDate;
+		this.orderDate = orderDate;
+		this.chargeDate = chargeDate;
+		this.chargeId = chargeId;
+		this.bankName = bankName;
+		this.cardNumber = cardNumber;
+		this.rentalFee = rentalFee;
+		this.payDate = payDate;
+		this.remainingCount = remainingCount;
+		this.chargeCount = chargeCount;
 	}
 }

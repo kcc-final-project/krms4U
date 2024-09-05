@@ -46,7 +46,9 @@ $(function () {
                           </tr>
                         </table>
                       </div>
-                      <br />
+                       <br>
+    <div id="result"></div>
+    <br />
                       <p>[Total: ${totalOrders}] | 회원님의 전체 주문 목록</p>
                       <table class="table table-striped table-bordered table-hover text-center">
                         <tbody>
@@ -68,9 +70,19 @@ $(function () {
                             <td>${item.modelName}</td>
                             <td>${item.modelCode}</td>
                             <td>${item.rentalFee.toLocaleString()}원</td>
-                            <td>
-                              <button class="btn btn-primary">기사 배정</button>
-                            </td>
+                                        <td>
+              <button onclick="engineer('1')" id="button1">기사 배정</button>
+              <br />
+              <div id="popup1" class="popup">
+                <h2>[배정 가능한 기사 목록]</h2>
+                <ul id="engineerList">
+                  <li onclick="selectEngineer('이름 : 김기사, 직급 : 대리, 조직 : 설치 1팀', 'button1')">김기사</li>
+                  <li onclick="selectEngineer('이름 : 윤기사, 직급 : 대리, 조직 : 설치 1팀', 'button1')">윤기사</li>
+                  <li onclick="selectEngineer('이름 : 황기사, 직급 : 대리, 조직 : 설치 1팀', 'button1')">황기사</li>
+                </ul>
+                <button onclick="closePopup('popup1')">닫기</button> </div>
+              </div>
+            </td>
                           </tr>
                         </tbody>
                       </table>
