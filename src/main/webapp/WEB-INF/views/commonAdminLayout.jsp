@@ -48,7 +48,8 @@
 <div class="common-sidebar">
     <div class="sidebar-wrap">
         <div class="sidebar-wrap__1">
-            <div class="sidebar-item sidebar-item__active">
+            <%--            sidebar-item__active"--%>
+            <div class="sidebar-item sidebar-item__active" data-path="/admin/user">
                 <div class="sidebar-item__wrap">
               <span class="material-icons sidebar-item__icon"
               >supervisor_account</span
@@ -56,23 +57,23 @@
                     <div class="sidebar-item__title">고객관리</div>
                 </div>
             </div>
-            <div class="sidebar-item">
+            <div class="sidebar-item sidebar-item__active" data-path="/admin/products">
                 <div class="sidebar-item__wrap">
               <span class="material-icons sidebar-item__icon"
-              >supervisor_account</span
+              >inventory_2</span
               >
                     <div class="sidebar-item__title">상품관리</div>
                 </div>
             </div>
-            <div class="sidebar-item">
+            <div class="sidebar-item sidebar-item__active" data-path="/admin/orderproduct">
                 <div class="sidebar-item__wrap">
               <span class="material-icons sidebar-item__icon"
-              >supervisor_account</span
+              >receipt_long</span
               >
                     <div class="sidebar-item__title">주문관리</div>
                 </div>
             </div>
-            <div class="sidebar-item">
+            <div class="sidebar-item sidebar-item__active" data-path="/admin/charge">
                 <div class="sidebar-item__wrap">
                     <span class="material-icons sidebar-item__icon">payments</span>
                     <div class="sidebar-item__title">청구관리</div>
@@ -81,5 +82,13 @@
         </div>
     </div>
 </div>
+<script>
+    $(function () {
+        $('.sidebar-item').click(function () {
+            const nextPath = $(this).data('path');
+            window.location.href = nextPath;
+        });
+    });
+</script>
 </body>
 </html>

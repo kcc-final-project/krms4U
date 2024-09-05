@@ -63,7 +63,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 15px;
+  gap: 5px;
 }
 
 .sidebar-item {
@@ -74,7 +74,7 @@ body {
   cursor: pointer;
 }
 
-.sidebar-item:not(.sidebar-item__active):hover {
+.sidebar-item:hover {
   opacity: 0.7;
   background-color: rgba(255, 255, 255, 0.1);
 }

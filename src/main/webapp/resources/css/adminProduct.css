@@ -3,7 +3,6 @@
     padding-top: 10px;
     padding-left: 20px;
     height: 3%;
-    background-color: #e2ebfa;
 }
 
 .main-product-header h6 {
@@ -13,31 +12,55 @@
 .main-product-name {
     display: flex;
     height: 10%;
-    background-color: #e2ebfa;
     padding-left: 10px;
     padding-right: 80px;
     justify-content: space-between; /* 양쪽 끝에 요소 배치 */
     align-items: center; /* 세로 중앙 정렬 */
     width: 100%; /* 너비를 부모 요소에 맞춤 */
 }
-.search{
+
+.search {
     width: 550px;
 }
 
+.hhh-input {
+    height: 32px;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1.5px solid #4c88fd;
+}
+
 .main-product-name .btn-primary {
-    width: 150px !important;
+    width: 120px !important;
 }
 
-.number-column{
-    width: 50px !important; /* 원하는 너비로 설정 */
-    text-align: center; /* 중앙 정렬 (선택 사항) */
-}
-.w-10{
+.number-column {
     width: 50px !important; /* 원하는 너비로 설정 */
     text-align: center; /* 중앙 정렬 (선택 사항) */
 }
 
-.price-column{
+.ms-10 {
+    margin-left: 40px;
+    height: 32px;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ccc-btn {
+    height: 32px;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.w-10 {
+    width: 50px !important; /* 원하는 너비로 설정 */
+    text-align: center; /* 중앙 정렬 (선택 사항) */
+}
+
+.price-column {
     width: 100px !important; /* 원하는 너비로 설정 */
 }
 
@@ -51,9 +74,10 @@
 
 .main-product-name h3 {
     margin-right: 30px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
 }
+
 .line {
     height: 1px;
     background-color: gray;
@@ -65,6 +89,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .product-title {
     display: flex;
     justify-content: space-between;
@@ -74,10 +99,15 @@
 .all-product-counts {
     font-weight: 900;
     padding-top: 20px;
-    padding-left: 80px;
-    margin-bottom: 10px;
+    padding-left: 40px;
+    margin-bottom: 20px;
     font-size: 15px;
 }
+
+.uni-cnt {
+    font-size: 14px;
+}
+
 .product-register-button {
     color: white;
     padding: 10px 20px;
@@ -92,9 +122,8 @@
 }
 
 .product-table {
-    width: 90%;
     margin: auto;
-    width: 90%;
+    width: 95%;
     height: 100%;
 }
 
@@ -104,12 +133,14 @@
     max-height: 610px;
     overflow-y: auto;
 }
+
 .table-box thead,
 .table-box tbody tr {
     display: table;
     width: 100%;
     table-layout: fixed;
 }
+
 tbody::-webkit-scrollbar {
     width: 6px;
     background-color: #eee;

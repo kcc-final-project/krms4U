@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -18,7 +18,7 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-     <link rel="stylesheet" href ="resources/css/join.css">
+    <link rel="stylesheet" href="resources/css/join.css">
 
 </head>
 <body>
@@ -31,14 +31,15 @@
                     <div class="login-image-mapper">
                         <div class="login-image-header"></div>
                         <div class="login-image">
-                            <span class="material-icons"><img src="/resources/img/service/logo.svg" class="logo" alt="" /></span>
+                            <span class="material-icons"><img src="/resources/img/service/logo.svg" class="logo"
+                                                              alt=""/></span>
                         </div>
                         <div class="login-title"></div>
                     </div>
                     <div class="login-title-mapper">
                         <p>회원가입</p>
                         <div>
-                            <form:form action="/join" method="post" modelAttribute="user" >
+                            <form:form action="/join" method="post" modelAttribute="user">
 
                                 <div>
                                     <form:input
@@ -70,7 +71,7 @@
                                             path="password"
                                     />
                                     <div class="errors-wrap">
-                                    <form:errors path="password" cssClass="errorCss"></form:errors>
+                                        <form:errors path="password" cssClass="errorCss"></form:errors>
                                     </div>
                                 </div>
                                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

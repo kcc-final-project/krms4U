@@ -42,7 +42,6 @@ const elRoadAddressDetail = document.querySelector('#roadAddressDetail');
 const elResults = document.querySelectorAll('.el_result');
 
 const onClickSearch = () => {
-    console.log(1);
     new daum.Postcode({
         oncomplete: function (data) {
             console.log(data);
@@ -53,9 +52,6 @@ const onClickSearch = () => {
 };
 
 const register = () => {
-    console.log(`우편번호: ${elZonecode.getAttribute('value')}`);
-    console.log(`주소: ${elRoadAddress.getAttribute('value')}`);
-    console.log(`상세주소: ${elRoadAddressDetail.getAttribute('value')}`);
     elResults[0].innerHTML = elZonecode.getAttribute('value');
     elResults[1].innerHTML = elRoadAddress.getAttribute('value');
     elResults[2].innerHTML = elRoadAddressDetail.getAttribute('value');
@@ -141,8 +137,7 @@ $(function () {
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
             success: function (res) {
-                console.log('성공!');
-                console.log(res);
+                window.location.href = "/mypage";
             },
             error: function (xhr, status, error) {
                 console.error("AJAX 요청 실패: " + status, error);
