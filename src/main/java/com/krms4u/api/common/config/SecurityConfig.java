@@ -39,11 +39,9 @@ public class SecurityConfig {
     // 보안 필터 체인을 설정합니다.
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // CSRF 보호 기능을 비활성화합니다.
-        http.csrf(AbstractHttpConfigurer::disable);
-
         // HTTP 요청에 대해 보안 설정을 합니다.
-        http.authorizeHttpRequests(authorize ->
+        http.csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(authorize ->
                         authorize.requestMatchers(WHITE_LIST).permitAll() // WHITE_LIST에 있는 URL은 모두에게 열어둡니다.
                                 .requestMatchers(PathRequest.toH2Console()).permitAll() // H2 콘솔도 모두에게 열어둡니다.
                                 .anyRequest().authenticated() // 그 외의 모든 요청은 인증(로그인)이 필요합니다.
