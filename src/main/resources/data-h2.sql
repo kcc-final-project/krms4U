@@ -19,7 +19,7 @@ alter table member add constraint pk_member
 -- member 데이터 추가
 
 insert into member(member_id, password, name, email, roles, created_at, updated_at)
-values(next value for seq_member, 'pw01', '황철원', 'user01@gmail.com', 'ROLE_USER', current_timestamp, current_timestamp);
+values(next value for seq_member, 'pw01', '황철원', 'dream1752@naver.com', 'ROLE_USER', current_timestamp, current_timestamp);
 
 
 insert into member(member_id, password, name, email, roles, created_at, updated_at)

@@ -1,0 +1,121 @@
+.main-product-header {
+    display: flex;
+    padding-top: 10px;
+    padding-left: 20px;
+    height: 3%;
+    background-color: #e2ebfa;
+}
+
+.main-product-header h6 {
+    line-height: 1.5;
+}
+
+.main-product-name {
+    display: flex;
+    height: 10%;
+    background-color: #e2ebfa;
+    padding-left: 10px;
+    padding-right: 80px;
+    justify-content: space-between; /* 양쪽 끝에 요소 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
+    width: 100%; /* 너비를 부모 요소에 맞춤 */
+}
+.search{
+    width: 550px;
+}
+
+.main-product-name .btn-primary {
+    width: 150px !important;
+}
+
+.number-column{
+    width: 50px !important; /* 원하는 너비로 설정 */
+    text-align: center; /* 중앙 정렬 (선택 사항) */
+}
+.w-10{
+    width: 50px !important; /* 원하는 너비로 설정 */
+    text-align: center; /* 중앙 정렬 (선택 사항) */
+}
+
+.price-column{
+    width: 100px !important; /* 원하는 너비로 설정 */
+}
+
+.search .btn {
+    width: 200px !important;
+}
+
+.product-list-register {
+    display: flex;
+}
+
+.main-product-name h3 {
+    margin-right: 30px;
+    font-size: 30px;
+    font-weight: 600;
+}
+.line {
+    height: 1px;
+    background-color: gray;
+}
+
+.main-product-list {
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all-product-counts {
+    font-weight: 900;
+    padding-top: 20px;
+    padding-left: 80px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.product-register-button {
+    color: white;
+    padding: 10px 20px;
+    padding-right: 80px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.product-register-button .btn {
+    width: 100px !important;
+}
+
+.product-table {
+    width: 90%;
+    margin: auto;
+    width: 90%;
+    height: 100%;
+}
+
+.table-box tbody {
+    display: block;
+    width: 100%;
+    max-height: 610px;
+    overflow-y: auto;
+}
+.table-box thead,
+.table-box tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+tbody::-webkit-scrollbar {
+    width: 6px;
+    background-color: #eee;
+}
+
+tbody::-webkit-scrollbar-thumb {
+    background-color: #7c869b;
+    border-radius: 10px;
+}

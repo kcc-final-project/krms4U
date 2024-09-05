@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.krms4u.api.domain.product.mapper.AdminProductMapper">
+
+    <select id="selectAllProducts" resultType="AdminProductRM">
+        SELECT * FROM Product
+    </select>
+
+    <!-- 삽입 연산을 수행하기 전에 시퀀스 값을 조회하여 product_id에 할당 -->
+    <insert id="saveProduct" parameterType="AdminProductRM">
+        <!-- 시퀀스에서 ID 값을 가져오기 -->
+        <selectKey keyProperty="product_id" resultType="long" order="BEFORE">
+            SELECT next value for seq_product AS product_id
+        </selectKey>
+
+        INSERT INTO product (
+        product_id, model_code, model_name, order_fee, product_size, product_period, product_capacity,
+        product_power, product_release, product_funtion, product_weight, product_method,
+        product_install, manufacturer, created_at, updated_at
+        ) VALUES (
+        #{product_id}, #{model_code}, #{model_name}, #{order_fee}, #{product_size}, #{product_period}, #{product_capacity},
+        #{product_power}, #{product_release}, #{product_funtion}, #{product_weight}, #{product_method},
+        #{product_install}, #{manufacturer}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+        )
+    </insert>
+</mapper>
