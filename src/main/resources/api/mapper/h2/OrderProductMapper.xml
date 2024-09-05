@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.krms4u.api.domain.order_product.mapper.OrderProductMapper">
+
+    <resultMap id="chargeMap" type="ChargeVO">
+        <id property="chargeId" column="charge_id" />
+        <result property="orderProductId" column="order_product_id"/>
+        <result property="chargeCount" column="charge_count" />
+        <result property="remainingCount" column="remaining_count" />
+        <result property="chargeDate" column="charge_date"/>
+    </resultMap>
+
+    <resultMap id="checkMap" type="CheckVO">
+        <id property="engineerId" column="engineer_id" />
+        <result property="orderProductId" column="orderProduct_id"/>
+        <result property="checkDate" column="check_date" />
+    </resultMap>
+
+    <resultMap id="orderproductMap" type="OrderProductDTO">
+        <id property="orderProductId" column="order_product_id"/>
+        <result property="modelName" column="model_name"/>
+        <result property="productId" column="product_id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="contractDeadline" column="contract_deadline"/>
+        <result property="recipientPhoneno" column="recipient_phoneno"/>
+        <result property="recipientName" column="recipient_name"/>
+        <result property="postcode" column="postcode"/>
+        <result property="address" column="address"/>
+        <result property="wishDate" column="wish_date"/>
+        <result property="orderDate" column="order_date"/>
+        <result property="orderState" column="order_state"/>
+        <result property="email" column="email"/>
+        <result property="memberId" column="member_id"/>
+        <result property="automaticTransferDate" column="automatic_transfer_date"/>
+        <result property="modelCode" column="model_code"/>
+        <collection property="charges" resultMap="chargeMap"/>
+        <collection property="checks" resultMap="checkMap"/>
+    </resultMap>
+
+    <select id="findAllOrderProducts" resultMap="orderproductMap">
+        SELECT
+        op.order_product_id,
+        op.order_id,
+        op.contract_deadline,
+        op.recipient_name,
+        op.recipient_phoneno,
+        op.postcode,
+        op.address,
+        op.wish_date,
+        op.order_state,
+        op.automatic_transfer_date,
+        op.recipient_name,
+        c.charge_id,
+        c.charge_count,
+        c.remaining_count,
+        c.charge_date,
+        ch.engineer_id,
+        ch.check_date,
+        p.product_id,
+        p.model_name,
+        p.model_code,
+        m.email,
+        o.member_id,
+        o.order_date,
+        op.order_state
+        FROM
+        order_product op
+        INNER JOIN
+        charge c ON op.order_product_id = c.order_product_id
+        INNER JOIN
+        checks ch ON op.order_product_id = ch.order_product_id
+        INNER JOIN
+        product p ON p.product_id = op.product_id
+        INNER JOIN
+        orders o ON o.order_id = op.order_id
+        INNER JOIN
+        member m ON m.member_id = o.member_id
+    </select>
+
+    <resultMap id="orderProduct" type="OrderProductVO">
+        <id property="orderProductId" column="order_product_id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="productId" column="product_id"/>
+        <result property="contractDeadline" column="contract_deadline"/>
+        <result property="recipientName" column="recipient_name"/>
+        <result property="recipientPhoneno" column="recipient_phoneno"/>
+        <result property="postcode" column="postcode"/>
+        <result property="address" column="address"/>
+        <result property="wishDate" column="wish_date"/>
+        <result property="orderState" column="order_state"/>
+        <result property="automaticTransferDate" column="automatic_transfer_date"/>
+
+
+    </resultMap>
+
+    <select id="findOrderProduct" resultMap="orderProduct">
+        SELECT
+            order_product_id,
+            order_id,
+            product_id,
+            contract_deadline,
+            recipient_name,
+            recipient_phoneno,
+            postcode,
+            address,
+            wish_date,
+            order_state,
+            automatic_transfer_date
+        FROM order_product WHERE order_product_id = #{orderProductId}
+    </select>
+
+    <resultMap id="orderPop" type="OrderPopDto">
+        <id column="order_product_id" property="orderProductId"/>
+        <result column="email" property="email"/>
+        <result column="product_id" property="productId"/>
+        <result column="model_code" property="modelCode"/>
+        <result column="model_name" property="modelName"/>
+        <result column="rental_fee" property="rentalFee"/>
+    </resultMap>
+    <select id="getOrderPopByEmail" resultMap="orderPop">
+        select
+        op.order_product_id,
+        u.email,
+        pr.product_id,
+        pr.model_code,
+        pr.model_name,
+        pa.rental_fee,
+        from member u INNER JOIN orders o
+        ON o.member_id = u.member_id INNER JOIN payment pa
+        ON pa.order_id = o.order_id INNER JOIN order_product op
+        ON o.order_id = op.order_id INNER JOIN product pr
+        ON op.product_id = pr.product_id
+        where email = #{email}
+    </select>
+
+
+    <update id="update" parameterType="OrderProductVO">
+        update order_product
+            set order_product_id= #{orderProductId},
+                order_id= #{orderId},
+                product_id= #{productId},
+                contract_deadline= #{contractDeadline},
+                recipient_name= #{recipientName},
+                recipient_phoneno= #{recipientPhoneno},
+                postcode= #{postcode},
+                address= #{address},
+                wish_date= #{wishDate},
+                order_state= #{orderState},
+                automatic_transfer_date= #{automaticTransferDate}
+            where order_product_id = #{orderProductId}
+    </update>
+
+</mapper>
+
+
+
+

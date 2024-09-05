@@ -1,6 +1,5 @@
 package com.krms4u.api.domain.product.dto.resultMap;
 
-import jakarta.annotation.Generated;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -18,6 +17,5 @@ public class ProductListBest5RM {
 
 	private final Integer orderFee; // 구매요금
 
-	// private final Integer rentalFee; // 렌탈요금(요금제 데이터 들어가면 포함)
 	
 }

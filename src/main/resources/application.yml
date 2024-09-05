@@ -1,6 +1,6 @@
 server:
   port: 8081
-  
+
 spring:
   messages:
     basename: messages
@@ -8,8 +8,36 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-  
---- 
+  config:
+    import: application-secret.yml
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: yun986927@gmail.com
+    password: ${spring.email.password}
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+          auth: true
+
+cloud:
+  aws:
+    s3:
+      bucket: kcc-bucket
+      url : https://kcc-bucket.s3.ap-northeast-2.amazonaws.com/
+    credentials:
+      access-key: ${cloud.aws.accessKey}
+      secret-key: ${cloud.aws.secretKey}
+    region:
+      static: ap-northeast-2
+      auto: false
+    stack:
+      auto: false
+
+---
 spring:
   config:
     activate:
@@ -25,7 +53,7 @@ spring:
   sql:
     init:
       data-locations: classpath:data-h2.sql
-      
+
 ---
 spring:
   config:
@@ -39,4 +67,6 @@ spring:
   sql:
     init:
       mode: never
-      
+
+
+

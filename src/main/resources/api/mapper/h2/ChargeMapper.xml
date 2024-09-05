@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.krms4u.api.domain.charge.mapper.ChargeMapper">
+
+    <resultMap id="chargeMap" type="ChargeVO">
+        <id property="chargeId" column="charge_id" />
+        <result property="orderProductId" column="order_product_id"/>
+        <result property="chargeCount" column="charge_count" />
+        <result property="remainingCount" column="remaining_count" />
+        <result property="chargeDate" column="charge_date"/>
+    </resultMap>
+
+    <resultMap id="checkMap" type="CheckVO">
+        <id property="engineerId" column="engineer_id" />
+        <result property="orderProductId" column="orderProduct_id"/>
+        <result property="checkDate" column="check_date" />
+    </resultMap>
+
+    <resultMap id="ChargeMap" type="ChargeDTO">
+        <id property="orderProductId" column="order_product_id"/>
+        <result property="modelName" column="model_name"/>
+        <result property="productId" column="product_id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="contractDeadline" column="contract_deadline"/>
+        <result property="recipientPhoneno" column="recipient_phoneno"/>
+        <result property="recipientName" column="recipient_name"/>
+        <result property="postcode" column="postcode"/>
+        <result property="address" column="address"/>
+        <result property="wishDate" column="wish_date"/>
+        <result property="orderDate" column="order_date"/>
+        <result property="chargeDate" column="charge_date"/>
+        <result property="chargeId" column="charge_id"/>
+        <result property="email" column="email"/>
+        <result property="memberId" column="member_id"/>
+        <result property="bankName" column="bank_name"/>
+        <result property="cardNumber" column="card_number"/>
+        <result property="rentalFee" column="rental_fee"/>
+        <result property="payDate" column="pay_date"/>
+        <result property="automaticTransferDate" column="automatic_transfer_date"/>
+        <result property="modelCode" column="model_code"/>
+        <collection property="charges" resultMap="chargeMap"/>
+        <collection property="checks" resultMap="checkMap"/>
+    </resultMap>
+
+    <select id="findAllCharges" resultMap="ChargeMap">
+        SELECT
+        op.order_product_id,
+        op.order_id,
+        op.contract_deadline,
+        op.recipient_name,
+        op.recipient_phoneno,
+        op.postcode,
+        op.address,
+        op.wish_date,
+        op.order_state,
+        op.automatic_transfer_date,
+        op.recipient_name,
+        c.charge_id,
+        c.charge_count,
+        c.remaining_count,
+        c.charge_date,
+        ch.engineer_id,
+        ch.check_date,
+        p.product_id,
+        p.model_name,
+        p.model_code,
+        m.email,
+        o.member_id,
+        o.order_date,
+        c.charge_date,
+        c.charge_id,
+        p.bank_name,
+        p.card_number,
+        p.rental_fee,
+        p.pay_date
+        FROM
+        order_product op
+        INNER JOIN
+        charge c ON op.order_product_id = c.order_product_id
+        INNER JOIN
+        checks ch ON op.order_product_id = ch.order_product_id
+        INNER JOIN
+        product p ON p.product_id = op.product_id
+        INNER JOIN
+        orders o ON o.order_id = op.order_id
+        INNER JOIN
+        member m ON m.member_id = o.member_id
+        INNER JOIN
+        payment p ON o.order_id = p.order_id
+    </select>
+
+</mapper>
+
+
+
+
