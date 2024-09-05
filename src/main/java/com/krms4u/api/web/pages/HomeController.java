@@ -10,6 +10,7 @@ public class HomeController {
 	public String getHomePage() {
 		return "index";
 	}
+
 	@GetMapping("/loginForm")
 	public String getLogin() {
 		return "loginForm";

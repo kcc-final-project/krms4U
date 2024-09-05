@@ -9,6 +9,72 @@
 <head>
     <link rel="stylesheet" href="/resources/css/productList.css"/>
     <script src="/resources/js/productList.js"></script>
+
+    <script>
+        let lastPage = Math.ceil(parseInt(${pageDTO.total}) / 8);
+        console.log(lastPage);
+        $(document).ready(function () {
+            let currentPage = 1;
+            let isLoading = false;
+
+            function loadMoreProducts() {
+                if (currentPage > lastPage) return
+                $.ajax({
+                    url: "/products?page=" + (currentPage + 1),
+                    type: "GET",
+                    success: function (data) {
+                        renderProducts(data);
+                        currentPage++;
+                        isLoading = false;
+                    },
+                    error: function () {
+                        isLoading = false;
+                    }
+                });
+            }
+
+            // 스크롤이 90% 이하로 내려가면 새로운 제품을 로드
+            $(window).scroll(function () {
+                if ($(window).scrollTop() + $(window).height() > $(document).height() * 0.9) {
+                    loadMoreProducts();
+                }
+            });
+
+        });
+
+        function renderProducts(products) {
+            const container = $('.total-products');
+            let html = '';
+            products.forEach(product => {
+                html +=
+                    '<div class="product-item card shadow-sm product-detail-id" data-product-id="' + product.productId + '">' +
+                    '<div class="product-item__image" style="background-image: url(\'' + product.folderPath + product.fileName + '\')"></div>' +
+                    '<div class="product-item__content">' +
+                    '<div class="product-item-title">' +
+                    '<div class="product-item-title__code">' + product.modelCode + '</div>' +
+                    '<div class="product-item-title__name">' + product.modelName + '</div>' +
+                    '</div>' +
+                    '<div class="product-line"></div>' +
+                    '<div class="product-item-prices">' +
+                    '<div class="best-product-item-prices">' +
+                    '<div class="best-product-item-price">' +
+                    '<div class="buy-title">구매</div>' +
+                    '<div>' + product.orderFee.toLocaleString() + ' 원</div>' +
+                    '</div>' +
+                    '<div class="best-product-item-price">' +
+                    '<div class="buy-title">렌탈</div>' +
+                    '<div class="rental-price">월 ' +
+                    (product.monthRentalFee ? product.monthRentalFee.toLocaleString() : '0') +
+                    ' 원~</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+            });
+            container.append(html);
+        }
+    </script>
 </head>
 <body>
 <div class="common-main">
@@ -23,7 +89,8 @@
                 </div>
                 <div class="best-products__5">
                     <c:forEach var="productBest5" items="${productBest5}">
-                        <div class="best-product-item card shadow-sm product-detail-id" data-product-id="${productBest5.productId}">
+                        <div class="best-product-item card shadow-sm product-detail-id"
+                             data-product-id="${productBest5.productId}">
                             <div class="best-product-item__image"
                                  style="background-image: url('${productBest5.folderPath}${productBest5.fileName}')"></div>
                             <div class="best-product-item__content">
@@ -60,7 +127,7 @@
             </div>
             <div class="total-products">
                 <c:forEach var="product" items="${productList}">
-                    <div class="product-item card shadow-sm" data-product-id="${product.productId}">
+                    <div class="product-item card shadow-sm product-detail-id" data-product-id="${product.productId}">
                         <div class="product-item__image"
                              style="background-image: url('${product.folderPath}${product.fileName}')"></div>
                         <div class="product-item__content">

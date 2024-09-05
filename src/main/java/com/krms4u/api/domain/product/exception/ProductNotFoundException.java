@@ -1,11 +1,13 @@
 package com.krms4u.api.domain.product.exception;
 
-import com.krms4u.api.common.exception.ExceptionCode;
-
 public class ProductNotFoundException extends RuntimeException {
 
-	public ProductNotFoundException() {
-		super(ExceptionCode.NOT_FOUND_PRODUCT.getErrorMessage());
-	}
+    public ProductNotFoundException(String message) {
+        super(message);
+    }
+
+    public ProductNotFoundException() {
+        this("존재하지 않는 제품입니다.");
+    }
 
 }
