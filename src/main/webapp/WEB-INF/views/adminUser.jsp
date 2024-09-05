@@ -38,7 +38,7 @@
       <span>전체 </span><span>${usersize}</span><span> 건</span>
     </div>
     <div class="main-member-list">
-      <div class="member-table shadow-sm">
+      <div class="member-table card shadow-sm">
         <table
                 class="table table-striped table-hover table-box"
                 id="payroll-table"

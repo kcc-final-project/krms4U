@@ -12,7 +12,7 @@ public interface OrderProductMapper {
     public List<OrderProductDTO> findAllOrderProducts();
 
     public List<OrderProductVO> findOrderProduct(Long orderProductId);
-    public void deleteOrderProduct(Long orderProductId);
     public List<OrderPopDto> getOrderPopByEmail(String email);
     public void update(OrderProductVO orderProductVO);
+    public void deleteOrderProduct(Long orderProductId);
 }

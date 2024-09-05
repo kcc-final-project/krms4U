@@ -46,6 +46,8 @@
 }
 
 .admin-order-section4 {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 10%;
 }
@@ -91,9 +93,8 @@
 
 /* 스크롤 바 */
 .scrollable-list {
-  height: 600px;
+  height: 500px;
   overflow-y: scroll;
-  border: 1px solid #ccc;
   padding: 10px;
 }
 .scrollable-list ul {
@@ -103,4 +104,20 @@
 }
 .scrollable-list li {
   padding: 5px 0;
+}
+
+.c-f {
+  color: #2e55f1 !important;
+  font-weight: 600;
+}
+
+.c-btn {
+  line-height: 18px;
+  font-size: 14px;
+  height: 29px;
+  width: 100px;
+}
+.admin-order-section5 h3 {
+  font-size: 26px;
+  font-weight: 600;
 }

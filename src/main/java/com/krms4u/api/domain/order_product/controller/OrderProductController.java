@@ -30,12 +30,12 @@ public class OrderProductController {
 		return "orderMain";
 	}
 
-	@GetMapping("/get/{orderProductId}")
+	@GetMapping("/orderproduct/{orderProductId}")
 	@ResponseBody
 	public ResponseEntity<List<OrderProductVO>> getOrderListByOrderProductId(@PathVariable Long orderProductId) {
 		List<OrderProductVO> voList = orderProductService.findOrderListByOrderProductId(orderProductId);
 		return voList == null ? new ResponseEntity<>(null, HttpStatus.NOT_FOUND)
-				 : new ResponseEntity<>(voList, HttpStatus.OK);
+				: new ResponseEntity<>(voList, HttpStatus.OK);
 	}
 
 	@GetMapping("/orderPop/{email}")
@@ -46,7 +46,6 @@ public class OrderProductController {
 				: new ResponseEntity<>(orderPop, HttpStatus.OK);
 	}
 
-	// http://localhost:8081/admin/orderproducts/1
 	@PutMapping("/orderproducts/{orderProductId}")
 	public ResponseEntity<OrderProductVO> updateOrderProduct(@PathVariable("orderProductId") Long orderProductId, @RequestBody OrderProductVO orderProductVO) {
 		orderProductVO.setOrderProductId(orderProductId);
