@@ -2,12 +2,10 @@ package com.krms4u.api.domain.product.dto.resultMap;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.ToString;
 
 @RequiredArgsConstructor
 @Getter
-@ToString
-public class ProductWithImageRM {
+public class ProductWithImageRM implements RentableProduct {
 
     private final Long productId; // 상품번호
 
@@ -23,6 +21,12 @@ public class ProductWithImageRM {
 
     private Integer monthRentalFee; // 월 렌탈 요금
 
+    @Override
+    public int getOrderFee() {
+        return orderFee;
+    }
+
+    @Override
     public void updateMonthRentalFee(final int monthMinRentalFee) {
         this.monthRentalFee = monthMinRentalFee;
     }

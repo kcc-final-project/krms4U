@@ -103,7 +103,6 @@ body {
 }
 
 .common-main {
-  /* background-color: red; */
   height: 100vh;
   margin-top: 70px; /* header height */
   margin-left: 100px; /* sidebar width */
@@ -113,7 +112,6 @@ body {
 }
 
 .main {
-  /* background-color: blue; */
   width: 97%;
   height: 100%;
 }

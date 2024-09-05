@@ -1,0 +1,146 @@
+.overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.main-container {
+    width: 1350px;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 70px;
+}
+
+.product-detail {
+    width: 85%;
+    height: 90%;
+}
+
+.product-detail__top {
+    height: 50%;
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-between;
+}
+
+.product-detail__image {
+    width: 30%;
+    height: 100%;
+    background-image: url('/images/2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.product-detail__control {
+    width: 60%;
+    height: 100%;
+    padding: 20px;
+}
+
+.product-detail__bottom {
+    height: 45%;
+}
+
+.product-detail__bottom > span {
+    font-weight: 600;
+}
+
+.line {
+    background-color: rgb(131, 131, 131);
+    height: 1px;
+    margin-top: 15px;
+}
+
+.product-detail-spec {
+    padding: 10px;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-detail-spec__item {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spec-name {
+    color: grey;
+}
+
+.product-detail__title span:nth-child(1) {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.product-detail__title span:nth-child(2) {
+    font-size: 18px;
+    color: grey;
+}
+
+.product-detail-wrap {
+    height: 80%;
+    margin-top: 35px;
+}
+
+.product-detail__fee {
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-detail__fee-item {
+    width: 49%;
+    height: 100%;
+}
+
+.control {
+    margin-top: 10px;
+    height: 15%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.select-box {
+    width: 30%;
+}
+
+.rental-btn {
+    width: 200px;
+}
+
+.period {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.p-10 {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.original-price {
+}
+
+.price-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.price-title + span {
+    font-size: 20px;
+}
+
+.font-point,
+.font-point + span {
+    color: #0155ff;
+    font-weight: 700;
+}

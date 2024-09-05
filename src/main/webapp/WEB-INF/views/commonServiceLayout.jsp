@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>        
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+    
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,7 +37,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    
   </head>		
   <body>
     <div class="common-header">
@@ -69,11 +68,11 @@
    			$(".goToSignUpPage").on("click", function() {
    				window.location.href="/joinForm";
    			});
-   			
+
    			$(".goToSignInPage").on("click", function() {
    				window.location.href="/loginForm";
    			});
    		});
    	</script>
-  </body>		
+  </body>
 </html>
