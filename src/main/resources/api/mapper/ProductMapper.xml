@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.krms4u.api.domain.product.mapper.ProductMapper">
+
+    <select id="selectProductBest5" resultType="com.krms4u.api.domain.product.dto.resultMap.ProductListBest5RM">
+        <![CDATA[
+        SELECT product_id, model_name, folder_path, file_name, order_fee
+        FROM (SELECT product_id, model_name, folder_path, file_name, order_fee, COUNT(*) as count
+              FROM (
+                  SELECT p.product_id, model_name, folder_path, file_name, order_fee
+                  FROM product p
+                  INNER JOIN image i ON p.product_id = i.product_id
+                  INNER JOIN order_product op ON p.product_id = op.product_id
+                  )
+              GROUP BY product_id, model_name, folder_path, file_name, order_fee
+              ORDER BY count DESC)
+        WHERE ROWNUM <= 5
+        ]]>
+    </select>
+
+    <select id="selectProductList" resultType="com.krms4u.api.domain.product.dto.resultMap.ProductWithImageRM"
+            parameterType="com.krms4u.api.domain.product.dto.resultMap.PageDTO">
+        <![CDATA[
+        SELECT p.product_id, model_code, model_name, order_fee, folder_path, file_name
+        FROM product p
+                 INNER JOIN image i ON p.product_id = i.product_id
+        ORDER BY p.created_at DESC
+            FETCH FIRST #{limit} ROWS ONLY
+        OFFSET (#{page}-1) * #{limit} ROWS
+        ]]>
+    </select>
+
+    <select id="selectProductById" parameterType="java.lang.Long"
+            resultType="com.krms4u.api.domain.product.dto.resultMap.ProductDetailRM">
+        SELECT p.product_id,
+               model_name,
+               model_code,
+               order_fee,
+               product_size,
+               product_period,
+               product_capacity,
+               product_power,
+               product_release,
+               product_funtion,
+               product_weight,
+               product_method,
+               product_install,
+               manufacturer,
+               folder_path,
+               file_name
+        FROM product p
+                 INNER JOIN image i ON p.product_id = i.product_id
+        WHERE p.product_id = #{id}
+    </select>
+
+    <select id="selectProductTotalCount" resultType="int">
+        SELECT count(*)
+        FROM product p
+                 INNER JOIN image i ON p.product_id = i.product_id
+    </select>
+
+    <insert id="selectOrderIdAfterInsertOrder"
+            parameterType="com.krms4u.api.domain.product.dto.request.ProductOrderRequest">
+        <selectKey keyProperty="orderId" resultType="long" order="BEFORE">
+            SELECT seq_orders.NEXTVAL FROM DUAL
+        </selectKey>
+
+        INSERT INTO orders(order_id, member_id, order_date)
+        VALUES (#{orderId}, #{memberId}, sysdate)
+    </insert>
+
+    <insert id="insertProductOrder"
+            parameterType="com.krms4u.api.domain.product.dto.request.ProductOrderSaveRequest">
+        <selectKey keyProperty="orderProductId" resultType="long" order="BEFORE">
+            SELECT seq_order_product.NEXTVAL FROM DUAL
+        </selectKey>
+
+        INSERT INTO order_product(order_product_id, order_id, product_id, contract_deadline, recipient_name,
+        recipient_phoneno, postcode, address, wish_date, order_state, automatic_transfer_date)
+        VALUES
+        (#{orderProductId}, #{orderId}, #{productId}, #{contractDeadline}, #{recipientName}, #{recipientPhoneno}, #{postcode}, #{address},
+        #{wishDate}, #{orderState}, #{automaticTransferDate})
+    </insert>
+
+    <insert id="insertPayment"
+            parameterType="com.krms4u.api.domain.product.dto.request.PaymentSaveRequest">
+        INSERT INTO payment(order_id, bank_name, card_number, rental_fee, pay_date)
+        VALUES (#{orderId}, #{bankName}, #{cardNumber}, #{rentalFee}, CURRENT_TIMESTAMP)
+    </insert>
+
+</mapper>
